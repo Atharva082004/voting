@@ -7,7 +7,7 @@ const mainBoard=document.querySelector('#mainBoard');
 const voteForm=document.querySelector('#voteForm');
 const vote=document.querySelector('#vote');
 const voteBtn=document.querySelector('#sendVote');
-const showResultContainer=document.querySelector('#showResultContainer')
+const showResultContainer=document.querySelector('#showResultContainer');
 const showResult=document.querySelector('#showResult');
 const result=document.querySelector('#result');
 const admin=document.querySelector('#admin');
@@ -344,8 +344,8 @@ const refreshPage = function(){
             showResultContainer.style.display = 'none';
         }else{
             timerMessage.textContent="Either there is no ongoing election or it's ended!!";
-            voteForm.style.display = 'none';
-            showResultContainer.style.display = 'block';
+            voteForm.style.display = 'flex';
+            showResultContainer.style.display = 'flex';
         }
     },1000);
 
@@ -377,7 +377,7 @@ const startElection = async function(){
     electionDuration.value = "";
 
     voteForm.style.display = "flex";
-    showResultContainer.style.display = "none";
+    showResultContainer.style.display = "flex";
 }
 
 const addCandidate = async function(){
@@ -404,8 +404,8 @@ const getAccount = async function(){
 
     let owner = await contract.owner();
     if(owner == signer._address){
-        admin.style.display = "flex";
         votingStation.style.display = "block";
+        admin.style.display = "flex";
         let time = await contract.electionTimer();
         if(time == 0){
             contract.checkElectionPeriod();
