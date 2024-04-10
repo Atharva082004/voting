@@ -13,6 +13,7 @@
     <div id="connectMetamask">
         <p id="connectWalletMessage">Please connect to your Wallet.</p>
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <button id="out" onclick="signOut();">Sign out</button>
         <button id="connectWallet">Connect Wallet</button> 
     </div>
     <div id="votingStation">
@@ -99,7 +100,6 @@
             </div>
         </div>
     </div>
-    <a href="#" onclick="signOut();">Sign out</a>
 <script>
   function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
