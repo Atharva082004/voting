@@ -13,14 +13,21 @@ body{
     text-align: center;
 }
 
+#img{
+    max-width: 80px;
+    height: auto;
+    border-radius: 40px;
+}
+
 #connectMetamask{
     width: 100%;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: rgb(161, 194, 196) 0px 5px 10px;
-    margin-bottom: 20px;
+    box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.3);
+    border: 3px solid rgb(66, 130, 178);
+    align-items: center;
 }
     #connectWalletMessage{
         font-size: large;
